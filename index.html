@@ -312,11 +312,12 @@
   }
   .btn.instagram{
     background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);color:#fff;
+    padding:13px 22px;font-size:13px;
   }
   .btn.instagram:hover{
     filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 8px 20px rgba(238,42,123,0.3);
   }
-  .btn.youtube{background:#FF0000;color:#fff;}
+  .btn.youtube{background:#FF0000;color:#fff;padding:13px 22px;font-size:13px;}
   .btn.youtube:hover{background:#CC0000;transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,0,0,0.3);}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
@@ -488,7 +489,7 @@
   .price-guarantee-note b{color:var(--red-deep);font-weight:700;}
 
   .pricing-cta-block{
-    text-align:center;padding:40px 5% 8px;border-top:1px solid var(--line);margin-top:8px;
+    text-align:center;padding:28px 5% 8px;border-top:1px solid var(--line);margin-top:8px;
   }
   .pricing-cta-block h3{font-size:22px;font-weight:600;color:var(--ink);margin-bottom:10px;}
   .pricing-cta-block p{color:var(--steel);font-size:14.5px;line-height:1.7;margin-bottom:24px;max-width:52ch;margin-left:auto;margin-right:auto;}
@@ -593,7 +594,7 @@
 
   .promo-banner{
     display:flex;align-items:center;gap:10px;background:var(--red-tint);
-    border:1px solid #f3c7c9;border-radius:14px;padding:10px 16px;margin:8px 0 24px;
+    border:1px solid #f3c7c9;border-radius:14px;padding:10px 16px;margin:8px 0 16px;
     flex-wrap:wrap;
   }
   .promo-banner .pi{
@@ -934,7 +935,7 @@
     .car-modal-panel{margin-top:8px;}
   }
   .car-modal-close{
-    position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;
+    position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;
     border:1px solid var(--line);background:var(--surface);color:var(--steel);cursor:pointer;
     font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;
   }
@@ -1388,6 +1389,11 @@
     <span class="fi">ℹ</span><span><b style="color:var(--red-deep);">고가 수입차량 및 튜닝차량</b>(슈퍼카, 특수 도장·랩핑 차량 등)은 차량별 상태가 상이해 상담 후 별도 견적을 안내해드려요.</span>
   </div>
 
+  <div class="promo-banner">
+    <span class="pi">🎁</span>
+    <span class="pt"><b>리뷰 작성 시</b> 종이방향제 증정 + 기본세차 5,000원·디테일링 10,000원 할인!</span>
+  </div>
+
   <div class="pricing-cta-block">
     <h3>내 차량에는 어떤 작업이 적합할까요?</h3>
     <p>차량 상태와 고객님의 관리 목적에 따라 적합한 작업 단계와 패키지를 안내해드립니다.</p>
@@ -1397,12 +1403,9 @@
     </div>
   </div>
 
-  <div class="promo-banner">
-    <span class="pi">🎁</span>
-    <span class="pt"><b>리뷰 작성 시</b> 종이방향제 증정 + 기본세차 5,000원·디테일링 10,000원 할인!</span>
-  </div>
-
 </section>
+
+<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 5, 600 30 T 1200 30"/></svg></div>
 
 <section id="car-guide" class="reveal">
   <div class="label-row">
