@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BBV84X4F9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6BBV84X4F9');
+</script>
 <link rel="canonical" href="https://carfeine.co.kr/">
 <meta name="robots" content="index, follow">
 <title>Car Feine | 원주 프리미엄 카 디테일링 &amp; 세차</title>
@@ -118,7 +128,8 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#faf9f6;
@@ -227,9 +238,9 @@
   /* HERO */
   .hero{
     min-height:100svh;
-    display:flex;flex-direction:column;justify-content:center;
+    display:flex;flex-direction:column;justify-content:flex-start;
     position:relative;
-    padding:0 5%;
+    padding:150px 5% 0;
     background:
       radial-gradient(ellipse 90% 55% at 50% 0%, var(--red-tint), transparent 60%),
       var(--bg);
