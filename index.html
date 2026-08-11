@@ -237,10 +237,9 @@
 
   /* HERO */
   .hero{
-    min-height:100svh;
     display:flex;flex-direction:column;justify-content:flex-start;
     position:relative;
-    padding:150px 5% 0;
+    padding:150px 5% 64px;
     background:
       radial-gradient(ellipse 90% 55% at 50% 0%, var(--red-tint), transparent 60%),
       var(--bg);
@@ -322,7 +321,7 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
   .scroll-cue{
-    position:absolute;bottom:34px;left:5%;font-family:'JetBrains Mono',monospace;
+    margin-top:56px;font-family:'JetBrains Mono',monospace;
     font-size:11px;color:var(--steel);display:flex;align-items:center;gap:10px;
   }
   .scroll-cue .bar{width:1px;height:36px;background:var(--line);position:relative;overflow:hidden;}
