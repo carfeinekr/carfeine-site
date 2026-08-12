@@ -45,13 +45,13 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "09:00",
       "closes": "12:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "13:00",
       "closes": "19:00"
     }
@@ -131,7 +131,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#faf9f6;
@@ -161,8 +161,8 @@
     font-weight:600;
   }
   .mono{
-    font-family:'JetBrains Mono',monospace;
-    letter-spacing:0.04em;
+    font-family:'IBM Plex Sans KR',sans-serif;
+    letter-spacing:0.02em;
   }
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
@@ -257,7 +257,7 @@
   }
   @keyframes draw{to{stroke-dashoffset:0;}}
   .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);
+    font-family:'IBM Plex Sans KR',sans-serif;font-size:12px;color:var(--red);
     letter-spacing:0.25em;margin-bottom:14px;
     opacity:0;animation:fadeUp 0.8s ease 0.2s forwards;
   }
@@ -274,7 +274,7 @@
   }
   .promo-strip .ps-badge{
     background:var(--red);color:#fff;font-size:11px;padding:6px 13px;border-radius:20px;
-    font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;flex-shrink:0;font-weight:500;
+    font-family:'IBM Plex Sans KR',sans-serif;letter-spacing:0.05em;flex-shrink:0;font-weight:500;
   }
   .promo-strip b{color:#fff;}
   .promo-strip:first-of-type{margin-bottom:10px;}
@@ -299,31 +299,31 @@
   }
   .btn{
     display:inline-flex;align-items:center;gap:10px;
-    padding:15px 28px;font-size:14px;font-family:'JetBrains Mono',monospace;
+    padding:15px 28px;font-size:14px;font-family:'IBM Plex Sans KR',sans-serif;
     letter-spacing:0.03em;border-radius:10px;transition:all 0.25s ease;
   }
   .btn.primary{background:linear-gradient(135deg,var(--red) 0%,var(--red-deep) 100%);color:#fff;}
   .btn.primary:hover{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);transform:translateY(-2px);box-shadow:0 8px 20px rgba(200,32,47,0.3);}
-  .btn.naver{background:#03c75a;color:#fff;position:relative;}
-  .btn.naver:hover{background:#02b350;transform:translateY(-2px);box-shadow:0 8px 20px rgba(3,199,90,0.25);}
+  .btn.naver{background:#1f9d55;color:#fff;position:relative;}
+  .btn.naver:hover{background:#1a8548;transform:translateY(-2px);box-shadow:0 8px 20px rgba(31,157,85,0.25);}
   .btn.naver.disabled{background:#e6e4df;color:var(--steel);cursor:not-allowed;}
   .btn.naver.disabled:hover{background:#e6e4df;transform:none;box-shadow:none;}
   .btn.naver .soon{
     font-size:10px;background:rgba(0,0,0,0.08);padding:3px 8px;border-radius:20px;margin-left:2px;
   }
   .btn.instagram{
-    background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);color:#fff;
+    background:linear-gradient(45deg,#d9b34a 0%,#c14a74 50%,#6b4fa0 100%);color:#fff;
     padding:13px 22px;font-size:13px;
   }
   .btn.instagram:hover{
-    filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 8px 20px rgba(238,42,123,0.3);
+    filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 8px 20px rgba(193,74,116,0.25);
   }
-  .btn.youtube{background:#FF0000;color:#fff;padding:13px 22px;font-size:13px;}
-  .btn.youtube:hover{background:#CC0000;transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,0,0,0.3);}
+  .btn.youtube{background:#c23b3b;color:#fff;padding:13px 22px;font-size:13px;}
+  .btn.youtube:hover{background:#a83232;transform:translateY(-2px);box-shadow:0 8px 20px rgba(194,59,59,0.25);}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
   .scroll-cue{
-    margin-top:56px;font-family:'JetBrains Mono',monospace;
+    margin-top:56px;font-family:'IBM Plex Sans KR',sans-serif;
     font-size:11px;color:var(--steel);display:flex;align-items:center;gap:10px;
   }
   .scroll-cue .bar{width:1px;height:36px;background:var(--line);position:relative;overflow:hidden;}
@@ -345,7 +345,7 @@
   .label-row{
     display:flex;align-items:baseline;gap:18px;margin-bottom:60px;
   }
-  .label-row .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--red);}
+  .label-row .num{font-family:'IBM Plex Sans KR',sans-serif;font-size:13px;color:var(--red);}
   .label-row h2{font-size:clamp(30px,4vw,52px);font-weight:600;color:var(--ink);}
   .label-row .rule{flex:1;height:1px;background:var(--line);}
 
@@ -389,12 +389,12 @@
   .pkg-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,0.06);z-index:2;}
   .pkg-card .pkg-badge{
     position:absolute;top:-1px;right:24px;background:var(--red);color:#fff;
-    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
+    font-family:'IBM Plex Sans KR',sans-serif;font-size:11px;letter-spacing:0.05em;
     padding:6px 14px;border-radius:0 0 8px 8px;font-weight:500;
   }
   .pkg-card h3{font-size:22px;font-weight:600;color:var(--ink);margin-bottom:8px;}
   .pkg-card .pkg-price{
-    font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:var(--red-deep);
+    font-family:'IBM Plex Sans KR',sans-serif;font-size:24px;font-weight:600;color:var(--red-deep);
     margin-bottom:16px;
   }
   .pkg-card .pkg-price span{font-size:13px;color:var(--steel);font-weight:400;margin-left:4px;}
@@ -427,7 +427,7 @@
   }
   .faq-item summary::-webkit-details-marker{display:none;}
   .faq-item summary::after{
-    content:'+';font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--red);font-weight:400;
+    content:'+';font-family:'IBM Plex Sans KR',sans-serif;font-size:20px;color:var(--red);font-weight:400;
     transition:transform 0.25s ease;
   }
   .faq-item[open] summary::after{transform:rotate(45deg);}
@@ -471,7 +471,7 @@
   .chip-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
   .chip{
     background:var(--red-tint);color:var(--red-deep);font-size:12px;padding:5px 12px;
-    border-radius:20px;display:inline-block;font-family:'JetBrains Mono',monospace;
+    border-radius:20px;display:inline-block;font-family:'IBM Plex Sans KR',sans-serif;
   }
   .chip.alt{background:#f0efec;color:var(--steel);}
   .chip.promo{background:var(--red);color:#fff;}
@@ -537,7 +537,7 @@
     display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:14px;
   }
   .price-options li:first-child{border-top:none;}
-  .price-options li span:last-child{color:var(--red-deep);font-family:'JetBrains Mono',monospace;font-size:13px;}
+  .price-options li span:last-child{color:var(--red-deep);font-family:'IBM Plex Sans KR',sans-serif;font-size:13px;}
   .price-notes{list-style:none;}
   .price-notes li{
     padding:6px 0 6px 16px;position:relative;font-size:14px;color:var(--steel);line-height:1.7;
@@ -568,7 +568,7 @@
   }
   .process-toggle summary::-webkit-details-marker{display:none;}
   .process-toggle summary::after{
-    content:'+';font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--red);
+    content:'+';font-family:'IBM Plex Sans KR',sans-serif;font-size:16px;color:var(--red);
     transition:transform 0.25s ease;
   }
   .process-toggle[open] summary::after{transform:rotate(45deg);}
@@ -577,7 +577,7 @@
   .process-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:22px;}
   .process-block .pb-label{
     font-size:12px;color:var(--red);font-weight:500;margin-bottom:10px;
-    letter-spacing:0.03em;font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.03em;font-family:'IBM Plex Sans KR',sans-serif;
   }
   .process-steps{list-style:none;counter-reset:step;}
   .process-steps li{
@@ -586,7 +586,7 @@
   }
   .process-steps li:first-child{border-top:none;}
   .process-steps li::before{
-    content:counter(step);font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#fff;
+    content:counter(step);font-family:'IBM Plex Sans KR',sans-serif;font-size:10.5px;color:#fff;
     background:var(--ink);width:19px;height:19px;border-radius:50%;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;
   }
@@ -608,7 +608,7 @@
   .promo-banner .pt{font-size:12.5px;color:var(--red-deep);line-height:1.5;}
   .promo-banner .pt b{color:var(--ink);}
   .scroll-hint{
-    display:none;font-size:11px;color:var(--steel);font-family:'JetBrains Mono',monospace;
+    display:none;font-size:11px;color:var(--steel);font-family:'IBM Plex Sans KR',sans-serif;
     margin:-4px 0 12px;
   }
   .mobile-tier-view{display:none;}
@@ -645,7 +645,7 @@
   }
   .mtv-row .mtv-label{font-size:13.5px;color:var(--ink);}
   .mtv-row .mtv-value{
-    font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--red-deep);
+    font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;color:var(--red-deep);
     font-size:14px;white-space:nowrap;
   }
 
@@ -699,7 +699,7 @@
 
   .gallery-tabs{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;}
   .gallery-tab{
-    flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:13px;
+    flex:0 0 auto;font-family:'IBM Plex Sans KR',sans-serif;font-size:13px;
     padding:11px 18px;border:1px solid var(--line);border-radius:20px;color:var(--steel);
     background:var(--surface);transition:all 0.2s ease;cursor:pointer;
   }
@@ -717,7 +717,7 @@
     scroll-snap-align:start;
   }
   .gallery-item .tag{
-    position:absolute;top:16px;left:16px;font-family:'JetBrains Mono',monospace;font-size:11px;
+    position:absolute;top:16px;left:16px;font-family:'IBM Plex Sans KR',sans-serif;font-size:11px;
     color:var(--red-deep);background:var(--red-tint);padding:4px 10px;border-radius:20px;
   }
   .gallery-item::after{
@@ -726,8 +726,8 @@
     transform:skewX(-15deg);transition:left 0.6s ease;
   }
   .gallery-item:hover::after{left:120%;}
-  .gallery-item span.cap{position:relative;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--steel);}
-  .gallery-hint{font-size:12px;color:var(--steel);margin-top:6px;font-family:'JetBrains Mono',monospace;}
+  .gallery-item span.cap{position:relative;font-family:'IBM Plex Sans KR',sans-serif;font-size:12px;color:var(--steel);}
+  .gallery-hint{font-size:12px;color:var(--steel);margin-top:6px;font-family:'IBM Plex Sans KR',sans-serif;}
   @media (max-width:700px){.gallery-item{width:72vw;}}
 
   /* CONTACT */
@@ -736,19 +736,21 @@
     display:flex;justify-content:space-between;padding:22px 0;border-top:1px solid var(--line);
   }
   .contact-info .row:last-child{border-bottom:1px solid var(--line);}
-  .contact-info .row .k{font-size:12px;color:var(--steel);font-family:'JetBrains Mono',monospace;}
+  .contact-info .row .k{font-size:12px;color:var(--steel);font-family:'IBM Plex Sans KR',sans-serif;}
   .contact-info .row .v{font-size:16px;text-align:right;color:var(--ink);}
   .contact-info .row .v a:hover{color:var(--red);}
-  .contact-info .row .v a.contact-instagram:hover{color:#ee2a7b;}
-  .contact-info .row .v a.contact-youtube:hover{color:#FF0000;}
+  .contact-info .row .v a.contact-instagram:hover{color:#c14a74;}
+  .contact-info .row .v a.contact-youtube:hover{color:#c23b3b;}
   .map-box{
+    display:flex;flex-direction:column;
     border:1px solid var(--line);min-height:280px;
     background:var(--surface);border-radius:10px;overflow:hidden;
   }
-  .map-box #naverMap{width:100%;height:280px;}
+  .map-box #naverMap{width:100%;flex:1;min-height:280px;}
   .map-box .map-link-naver{
+    flex-shrink:0;
     display:flex;align-items:center;justify-content:center;gap:8px;
-    padding:14px;font-size:14px;font-weight:500;color:#03c75a;
+    padding:14px;font-size:14px;font-weight:500;color:#1f9d55;
     border-top:1px solid var(--line);transition:background 0.2s ease;
   }
   .map-box .map-link-naver:hover{background:#f1fbf5;}
@@ -760,14 +762,14 @@
   }
   footer .brand{display:flex;align-items:center;gap:10px;}
   footer .brand img{height:28px;}
-  footer .meta{font-size:12px;color:var(--steel);font-family:'JetBrains Mono',monospace;}
+  footer .meta{font-size:12px;color:var(--steel);font-family:'IBM Plex Sans KR',sans-serif;}
   footer .social{display:flex;gap:10px;flex-wrap:wrap;}
   footer .social a{
     font-size:13px;color:var(--steel);border:1px solid var(--line);padding:8px 16px;
     border-radius:10px;transition:all 0.2s ease;display:inline-flex;align-items:center;gap:7px;
   }
-  footer .social a.instagram:hover{color:#fff;border-color:#ee2a7b;background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);}
-  footer .social a.youtube:hover{color:#fff;border-color:#FF0000;background:#FF0000;}
+  footer .social a.instagram:hover{color:#fff;border-color:#c14a74;background:linear-gradient(45deg,#d9b34a 0%,#c14a74 50%,#6b4fa0 100%);}
+  footer .social a.youtube:hover{color:#fff;border-color:#c23b3b;background:#c23b3b;}
 
   .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease, transform 0.7s ease;}
   .reveal.show{opacity:1;transform:translateY(0);}
@@ -800,7 +802,7 @@
     border-bottom:2px solid var(--bg);
   }
   table.main-table td.maker{color:var(--ink);font-weight:500;text-align:center;}
-  table.main-table td.range{color:var(--red-deep);font-family:'JetBrains Mono',monospace;text-align:center;font-size:12px;}
+  table.main-table td.range{color:var(--red-deep);font-family:'IBM Plex Sans KR',sans-serif;text-align:center;font-size:12px;}
   table.main-table td.remark{font-size:11px;color:var(--steel);line-height:1.6;}
   table.main-table td.remark ul{list-style:none;}
   table.main-table td.remark li{padding-left:10px;position:relative;}
@@ -813,7 +815,7 @@
     display:flex;align-items:center;gap:8px;padding:6px 0;font-size:11px;color:var(--steel);
   }
   .thickness-scale .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
-  .thickness-scale .val{font-family:'JetBrains Mono',monospace;color:var(--ink);min-width:64px;font-size:11px;}
+  .thickness-scale .val{font-family:'IBM Plex Sans KR',sans-serif;color:var(--ink);min-width:64px;font-size:11px;}
   .bullet-list{list-style:none;font-size:11.5px;color:var(--steel);line-height:1.85;}
   .bullet-list li{padding-left:12px;position:relative;}
   .bullet-list li::before{content:'—';position:absolute;left:0;color:var(--chrome);}
@@ -861,20 +863,20 @@
   }
   .suggest-item:first-child{border-top:none;}
   .suggest-item:hover{background:var(--red-tint);color:var(--red-deep);}
-  .suggest-item span.grp{font-size:11px;color:var(--steel);font-family:'JetBrains Mono',monospace;}
+  .suggest-item span.grp{font-size:11px;color:var(--steel);font-family:'IBM Plex Sans KR',sans-serif;}
 
   .result-card{margin-top:20px;display:none;}
   .result-card.show{display:block;}
   .result-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
   .result-head .rname{font-size:19px;font-weight:600;color:var(--ink);font-family:'IBM Plex Sans KR',sans-serif;text-transform:uppercase;}
-  .result-head .rtag{font-size:12px;color:var(--steel);font-family:'JetBrains Mono',monospace;}
+  .result-head .rtag{font-size:12px;color:var(--steel);font-family:'IBM Plex Sans KR',sans-serif;}
   .result-rows{border-top:1px solid var(--line);}
   .result-row{
     display:flex;justify-content:space-between;align-items:flex-start;padding:11px 2px;border-bottom:1px solid var(--line);font-size:13.5px;
   }
   .result-row .rk{color:var(--steel);display:inline-flex;flex-direction:column;gap:3px;flex:1;min-width:0;padding-right:10px;}
   .result-row .rk small{font-size:11px;color:var(--steel);font-weight:400;line-height:1.4;white-space:normal;}
-  .result-row .rv{font-family:'JetBrains Mono',monospace;color:var(--red-deep);font-weight:500;flex-shrink:0;padding-left:12px;}
+  .result-row .rv{font-family:'IBM Plex Sans KR',sans-serif;color:var(--red-deep);font-weight:500;flex-shrink:0;padding-left:12px;}
   .result-note{font-size:11.5px;color:var(--steel);margin-top:12px;line-height:1.6;}
   .result-alert{
     display:flex;gap:8px;align-items:flex-start;
@@ -893,7 +895,7 @@
     display:flex;align-items:center;gap:9px;
     background:var(--red);color:#fff;border:none;cursor:pointer;
     padding:15px 22px 15px 18px;border-radius:32px;
-    font-family:'JetBrains Mono',monospace;font-size:13px;
+    font-family:'IBM Plex Sans KR',sans-serif;font-size:13px;
     box-shadow:0 10px 26px rgba(200,32,47,0.35);
     transition:transform 0.2s ease, box-shadow 0.2s ease;
   }
@@ -1055,7 +1057,7 @@
   <p class="sub">세차부터 광택, 디테일링까지 — Car Feine은 차량 한 대 한 대에 정성을 쌓아 올립니다. 마무리까지 깨끗하고 세심하게.</p>
   <div class="cta-row">
     <a class="btn primary" href="tel:050714531377">전화 상담</a>
-    <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버 예약하기</a>
+    <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버예약</a>
     <a class="btn instagram" href="https://instagram.com/carfeine_detailing" target="_blank" rel="noopener">Instagram</a>
     <a class="btn youtube" href="https://www.youtube.com/@Carfeinekr" target="_blank" rel="noopener">YouTube</a>
   </div>
@@ -1650,11 +1652,11 @@
   <div class="contact-wrap">
     <div class="contact-info">
       <div class="row"><span class="k">PHONE</span><span class="v"><a href="tel:050714531377">0507-1453-1377</a></span></div>
-      <div class="row"><span class="k">NAVER 예약</span><span class="v"><a href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버 예약하기</a></span></div>
+      <div class="row"><span class="k">NAVER 예약</span><span class="v"><a href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버예약</a></span></div>
       <div class="row"><span class="k">INSTAGRAM</span><span class="v"><a class="contact-instagram" href="https://instagram.com/carfeine_detailing" target="_blank" rel="noopener">Instagram</a></span></div>
       <div class="row"><span class="k">YOUTUBE</span><span class="v"><a class="contact-youtube" href="https://www.youtube.com/@Carfeinekr" target="_blank" rel="noopener">@Carfeinekr</a></span></div>
       <div class="row"><span class="k">ADDRESS</span><span class="v">강원특별자치도 원주시 늘품로 187-66</span></div>
-      <div class="row"><span class="k">HOURS</span><span class="v">매일 09:00 ~ 19:00 (휴게시간 12:00 ~ 13:00)</span></div>
+      <div class="row"><span class="k">HOURS</span><span class="v">화~일 09:00 ~ 19:00 (휴게시간 12:00 ~ 13:00) · 매주 월요일 정기휴무</span></div>
     </div>
     <div class="map-box">
       <div id="naverMap" role="img" aria-label="Car Feine 위치 지도"></div>
@@ -1723,7 +1725,7 @@
         <p class="result-note">차량 상태와 옵션에 따라 실제 견적은 달라질 수 있습니다. 정확한 금액은 전화 상담으로 확인해주세요.</p>
         <div class="modal-cta-row">
           <a class="btn primary" href="tel:050714531377">전화 상담하기</a>
-          <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버 예약하기</a>
+          <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버예약</a>
         </div>
       </div>
       <div class="no-result" id="noResultM">
