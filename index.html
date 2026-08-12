@@ -306,11 +306,6 @@
   .btn.primary:hover{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red) 100%);transform:translateY(-2px);box-shadow:0 8px 20px rgba(200,32,47,0.3);}
   .btn.naver{background:#1f9d55;color:#fff;position:relative;}
   .btn.naver:hover{background:#1a8548;transform:translateY(-2px);box-shadow:0 8px 20px rgba(31,157,85,0.25);}
-  .btn.naver.disabled{background:#e6e4df;color:var(--steel);cursor:not-allowed;}
-  .btn.naver.disabled:hover{background:#e6e4df;transform:none;box-shadow:none;}
-  .btn.naver .soon{
-    font-size:10px;background:rgba(0,0,0,0.08);padding:3px 8px;border-radius:20px;margin-left:2px;
-  }
   .btn.instagram{
     background:linear-gradient(45deg,#d9b34a 0%,#c14a74 50%,#6b4fa0 100%);color:#fff;
     padding:13px 22px;font-size:13px;
@@ -1822,7 +1817,9 @@
     const fmt = n => n.toLocaleString('ko-KR') + '원';
 
     async function fetchCars(query){
-      const q = encodeURIComponent(query);
+      // 쉼표/괄호/별표는 PostgREST의 or=(...) 필터 문법과 충돌해 400 에러를 유발하므로 검색어에서 제거
+      const safeQuery = query.replace(/[,()*]/g, ' ').trim();
+      const q = encodeURIComponent(safeQuery);
       const url = `${SUPABASE_URL}/rest/v1/cars?select=name,car_group,tier&or=(name.ilike.*${q}*,aliases.ilike.*${q}*)&order=id.asc&limit=8`;
       const res = await fetch(url, {
         headers: {
