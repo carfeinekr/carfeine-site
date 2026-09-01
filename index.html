@@ -739,6 +739,13 @@
   }
   .gallery-item:hover::after{left:120%;}
   .gallery-item span.cap{position:relative;font-family:'IBM Plex Sans KR',sans-serif;font-size:12px;color:var(--steel);}
+  .gallery-item.has-photo{background-size:cover;background-position:center;}
+  .gallery-item.has-photo::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.62), rgba(0,0,0,0.08) 55%, transparent 75%);
+  }
+  .gallery-item.has-photo .tag{z-index:1;}
+  .gallery-item.has-photo span.cap{position:relative;z-index:1;color:#fff;font-weight:500;}
   .gallery-hint{font-size:12px;color:var(--steel);margin-top:6px;font-family:'IBM Plex Sans KR',sans-serif;}
   @media (max-width:700px){.gallery-item{width:72vw;}}
 
@@ -1131,7 +1138,7 @@
   </div>
   <div class="gallery-scroll" id="galleryScroll">
     <div class="gallery-item" data-category="wash"><span class="tag">기본세차</span><span class="cap">사진 준비 중</span></div>
-    <div class="gallery-item" data-category="detailing"><span class="tag">디테일링</span><span class="cap">사진 준비 중</span></div>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224396133230" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_modely.jpg');"><span class="tag">디테일링</span><span class="cap">테슬라 모델Y · PPF 관리</span></a>
     <div class="gallery-item" data-category="polish"><span class="tag">광택</span><span class="cap">사진 준비 중</span></div>
     <div class="gallery-item" data-category="coating"><span class="tag">유리막코팅</span><span class="cap">사진 준비 중</span></div>
   </div>
