@@ -1029,6 +1029,167 @@
   .car-fab:active{transform:scale(0.95);}
   .suggest-item:active{background:var(--red-tint);color:var(--red-deep);}
   .pkg-card:active, .value-card:active{transform:scale(0.99);}
+
+  /* =====================================================================
+     V2 LAYOUT (2026-10 리뉴얼) — 모바일 우선 / 정보 우선순위 재배치
+     ===================================================================== */
+  body{font-size:15px;padding-bottom:0;}
+  section{max-width:1160px;margin-left:auto;margin-right:auto;padding:56px 5%;}
+  section + section{border-top:1px solid var(--line);}
+  .reveal{opacity:1;transform:none;}
+
+  .sec-head{margin-bottom:28px;}
+  .sec-eyebrow{font-size:12px;color:var(--red);letter-spacing:0.22em;font-weight:600;margin-bottom:8px;}
+  .sec-head h2{font-size:clamp(26px,4.2vw,38px);font-weight:700;letter-spacing:-0.01em;color:var(--ink);line-height:1.25;}
+  .sec-desc{margin-top:10px;font-size:15px;color:var(--steel);line-height:1.8;max-width:62ch;}
+
+  /* ---- HERO ---- */
+  section.v2-hero{
+    max-width:none;margin:0;border-top:none;
+    padding:108px 5% 40px;
+    background:radial-gradient(ellipse 90% 60% at 50% 0%, var(--red-tint), transparent 62%), var(--bg);
+  }
+  .v2-hero-inner{max-width:1160px;margin:0 auto;}
+  .v2-hero .location-tag{margin-bottom:12px;}
+  .v2-hero h1{
+    font-size:clamp(32px,6.2vw,60px);line-height:1.14;font-weight:700;max-width:14ch;color:var(--ink);
+    opacity:0;animation:fadeUp 0.9s ease 0.3s forwards;
+  }
+  .v2-hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--red-deep),var(--red) 60%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .v2-hero .sub{
+    margin-top:18px;max-width:520px;font-size:15.5px;color:var(--steel);line-height:1.75;
+    opacity:0;animation:fadeUp 0.9s ease 0.45s forwards;
+  }
+  .v2-hero .cta-row{
+    margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:480px;
+    opacity:0;animation:fadeUp 0.9s ease 0.6s forwards;
+  }
+  .v2-hero .cta-row .btn{width:100%;padding:15px 12px;font-size:15px;font-weight:600;}
+  .hero-sns{display:flex;gap:8px;margin-top:10px;opacity:0;animation:fadeUp 0.9s ease 0.7s forwards;}
+  .hero-sns a{
+    font-size:12.5px;color:var(--steel);border:1px solid var(--line);background:var(--surface);
+    padding:8px 14px;border-radius:20px;
+  }
+  .hero-prices{
+    margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:640px;
+    opacity:0;animation:fadeUp 0.9s ease 0.8s forwards;
+  }
+  .hp{
+    display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:14px 14px 13px;transition:border-color .2s ease, transform .2s ease;
+  }
+  .hp:hover{border-color:var(--red);transform:translateY(-2px);}
+  .hp .hp-name{font-size:13px;color:var(--steel);font-weight:500;}
+  .hp .hp-price{font-size:19px;font-weight:700;color:var(--red-deep);margin:2px 0 1px;letter-spacing:-0.01em;}
+  .hp .hp-price small{font-size:11px;font-weight:500;color:var(--steel);margin-left:1px;}
+  .hp .hp-time{font-size:11.5px;color:var(--steel);}
+  .v2-hero .promo-strip{margin:22px 0 0;font-size:12.5px;animation-delay:0.9s;}
+
+  /* ---- QUOTE ---- */
+  section.v2-quote{padding-top:36px;padding-bottom:36px;border-top:none;}
+  .v2-quote .search-widget{margin-bottom:0;}
+
+  /* ---- 서비스 카드: 모바일은 가로 스와이프, 데스크톱은 5열 ---- */
+  .pkg-cards-grid{
+    display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    background:none;border:none;padding:4px 2px 14px;margin-bottom:20px;
+  }
+  .pkg-cards-grid::-webkit-scrollbar{height:4px;}
+  .pkg-cards-grid::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px;}
+  .pkg-cards-grid .pkg-card{
+    flex:0 0 74%;max-width:300px;scroll-snap-align:start;
+    border:1px solid var(--line);border-radius:14px;padding:22px 20px;
+  }
+  .pkg-card h3{font-size:19px;}
+  .pkg-card .pkg-price{font-size:22px;margin-bottom:10px;}
+  .pkg-card p.pkg-desc{font-size:13.5px;line-height:1.7;}
+  .pkg-card .pkg-badge{right:18px;}
+  @media (min-width:1000px){
+    .pkg-cards-grid{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible;}
+    .pkg-cards-grid .pkg-card{flex:none;max-width:none;}
+  }
+  @media (max-width:820px){
+    .mem-cards-grid{
+      display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;background:none;border:none;
+      padding:4px 2px 14px;-webkit-overflow-scrolling:touch;
+    }
+    .mem-cards-grid .pkg-card{flex:0 0 78%;max-width:320px;scroll-snap-align:start;border:1px solid var(--line);border-radius:14px;}
+  }
+
+  /* ---- 가격 탭 ---- */
+  .price-tabs{margin-top:8px;}
+  .price-tab{padding:12px 20px;font-size:14.5px;}
+  .notes-toggle{margin:18px 0 6px;}
+  .notes-toggle .notice-banner{margin-top:0;border:none;background:none;padding:0 4px 18px;}
+  .notes-toggle summary{color:var(--red-deep);}
+
+  /* ---- 갤러리: 그리드 + 더보기 ---- */
+  .gallery-scroll{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:10px;overflow:visible;
+    scroll-snap-type:none;padding-bottom:0;
+  }
+  .gallery-scroll .gallery-item{width:auto;border-radius:12px;padding:14px;scroll-snap-align:none;}
+  .gallery-scroll .gallery-item.gone{display:none;}
+  .gallery-scroll .gallery-item .tag{top:10px;left:10px;font-size:10.5px;}
+  .gallery-scroll .gallery-item span.cap{font-size:13px;line-height:1.35;}
+  @media (min-width:700px){ .gallery-scroll{grid-template-columns:repeat(4,1fr);gap:14px;} }
+  .gallery-more{
+    display:block;margin:20px auto 0;padding:13px 28px;border:1px solid var(--ink);color:var(--ink);
+    background:var(--surface);border-radius:28px;font-size:14px;font-weight:500;cursor:pointer;
+    font-family:'IBM Plex Sans KR',sans-serif;
+  }
+  .gallery-more:hover{background:var(--ink);color:#fff;}
+  .gallery-hint{text-align:center;margin-top:14px;}
+
+  /* ---- 핵심가치/소개 ---- */
+  .value-card{padding:26px 24px;}
+  .value-card h4{font-size:17px;}
+  .about-note{margin-top:28px;padding:22px 24px;background:var(--surface);border:1px solid var(--line);border-radius:12px;}
+  .about-note .lede{font-size:16.5px;font-weight:600;color:var(--ink);line-height:1.6;margin-bottom:10px;}
+  .about-note p{font-size:14px;color:var(--steel);line-height:1.85;margin-bottom:8px;}
+  .about-note p:last-child{margin-bottom:0;}
+  .about-note strong{color:var(--ink);font-weight:600;}
+
+  /* ---- 하단 고정 바 (모바일) / 견적확인 버튼 (데스크톱) ---- */
+  .dock{position:fixed;z-index:250;}
+  .dock-btn{
+    display:flex;align-items:center;justify-content:center;gap:6px;border:none;cursor:pointer;
+    font-family:'IBM Plex Sans KR',sans-serif;font-size:14.5px;font-weight:600;
+    height:48px;border-radius:12px;white-space:nowrap;
+  }
+  .dock-btn.call{background:linear-gradient(135deg,var(--red) 0%,var(--red-deep) 100%);color:#fff;}
+  .dock-btn.naver{background:var(--surface);color:#1f9d55;border:1.5px solid #1f9d55;}
+  .dock-btn.quote{background:var(--ink);color:#fff;}
+  @media (max-width:820px){
+    body{padding-bottom:76px;}
+    .dock{
+      left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;
+      padding:9px 12px calc(9px + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,0.06);
+    }
+  }
+  @media (min-width:821px){
+    .dock{right:26px;bottom:30px;}
+    .dock-btn.call,.dock-btn.naver{display:none;}
+    .dock-btn.quote{background:var(--red);padding:0 24px;border-radius:32px;box-shadow:0 10px 26px rgba(200,32,47,0.35);}
+  }
+
+  @media (max-width:480px){
+    section{padding:44px 5%;}
+    section.v2-hero{padding:92px 5% 32px;}
+    section.v2-quote{padding-top:28px;padding-bottom:28px;}
+    .hero-prices{gap:8px;}
+    .hp{padding:12px 10px 11px;}
+    .hp .hp-price{font-size:16.5px;}
+    .sec-head{margin-bottom:22px;}
+    .search-widget{padding:22px 18px 20px;}
+  }
+
 </style>
 </head>
 <body>
@@ -1042,12 +1203,12 @@
     <img id="brandLogo" src="/assets/logo.webp" alt="Car Feine 로고">
   </div>
   <nav class="links">
-    <a href="#portfolio">핵심 가치</a>
-    <a href="#services">서비스&amp;가격안내</a>
+    <a href="#quote">내차 견적</a>
+    <a href="#services">서비스&amp;가격</a>
+    <a href="#gallery">작업갤러리</a>
     <a href="#membership">정액제</a>
-    <a href="#carWidgetInline">내차 견적조회</a>
+    <a href="#car-guide">차량기준표</a>
     <a href="#faq">자주묻는질문</a>
-    <a href="#about">회사소개</a>
     <a href="#contact">문의</a>
   </nav>
   <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileNav">
@@ -1056,128 +1217,98 @@
 </header>
 
 <nav class="mobile-nav" id="mobileNav">
-  <a href="#portfolio">핵심 가치</a>
-  <a href="#services">서비스&amp;가격안내</a>
+  <a href="#quote">내차 견적</a>
+  <a href="#services">서비스&amp;가격</a>
+  <a href="#gallery">작업갤러리</a>
   <a href="#membership">정액제</a>
-  <a href="#carWidgetInline">내차 견적조회</a>
+  <a href="#car-guide">차량기준표</a>
   <a href="#faq">자주묻는질문</a>
   <a href="#about">회사소개</a>
   <a href="#contact">문의</a>
 </nav>
 
-<section class="hero">
-  <svg class="hero-svg" viewBox="0 0 1200 800" preserveAspectRatio="none">
-    <path d="M -50 620 C 250 560, 500 600, 700 520 C 850 460, 950 420, 1250 380" />
-  </svg>
-  <div class="promo-strip">
-    <span class="ps-badge">REVIEW EVENT</span>
-    <span>리뷰 작성 시 종이방향제 증정 + 기본세차 5,000원 · 디테일링 10,000원 할인</span>
+<!-- ============ HERO ============ -->
+<section class="v2-hero">
+  <div class="v2-hero-inner">
+    <p class="eyebrow mono">WONJU · DETAILING &amp; CAR WASH</p>
+    <p class="location-tag">원주 프리미엄 카케어. 카-페인</p>
+    <h1>당신의 차가<br>가장 <em>완벽한</em><br>순간을 만든다</h1>
+    <p class="sub">세차부터 광택, 디테일링까지. 차량 상태를 먼저 확인하고 필요한 작업만 정직하게 안내합니다.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="tel:050714531377">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        전화 상담
+      </a>
+      <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 15.5l2 2 4-4.5"/></svg>
+        네이버 예약
+      </a>
+    </div>
+    <div class="hero-sns">
+      <a href="https://instagram.com/carfeine_detailing" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@Carfeinekr" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <div class="hero-prices">
+      <a class="hp js-acc-link" data-acc="acc-wash" href="#services"><div class="hp-name">기본세차</div><div class="hp-price">40,000<small>원~</small></div><div class="hp-time">약 1~2시간</div></a>
+      <a class="hp js-acc-link" data-acc="acc-detail" href="#services"><div class="hp-name">디테일링</div><div class="hp-price">150,000<small>원~</small></div><div class="hp-time">약 4~5시간</div></a>
+      <a class="hp js-acc-link" data-acc="acc-polish" href="#services"><div class="hp-name">광택·코팅</div><div class="hp-price">400,000<small>원~</small></div><div class="hp-time">1~2일</div></a>
+    </div>
+    <div class="promo-strip">
+      <span class="ps-badge">REVIEW EVENT</span>
+      <span>리뷰 작성 시 종이방향제 증정 + 기본세차 5,000원 · 디테일링 10,000원 할인</span>
+    </div>
   </div>
-  <p class="eyebrow mono">WONJU · DETAILING &amp; CAR WASH</p>
-  <p class="location-tag">원주 프리미엄 카케어. 카-페인</p>
-  <h1>당신의 차가<br>가장 <em>완벽한</em><br>순간을 만든다</h1>
-  <p class="sub">세차부터 광택, 디테일링까지 — Car Feine은 차량 한 대 한 대에 정성을 쌓아 올립니다. 마무리까지 깨끗하고 세심하게.</p>
-  <div class="cta-row">
-    <a class="btn primary" href="tel:050714531377">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      전화 상담
-    </a>
-    <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 15.5l2 2 4-4.5"/></svg>
-      네이버예약
-    </a>
-    <a class="btn instagram" href="https://instagram.com/carfeine_detailing" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-      Instagram
-    </a>
-    <a class="btn youtube" href="https://www.youtube.com/@Carfeinekr" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21.6 7.2s-.2-1.5-.8-2.2c-.8-.8-1.7-.9-2.1-.9C15.9 4 12 4 12 4s-3.9 0-6.7.1c-.4 0-1.3.1-2.1.9-.6.7-.8 2.2-.8 2.2S2.2 9 2.2 10.8v1.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.8.8 1.8.8 2.3.9 1.7.2 7.2.2 7.5.2 0 0 3.9 0 6.7-.1.4 0 1.3-.1 2.1-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-1.6c0-1.8-.2-3.6-.2-3.6z"/><path d="M9.9 14.6V8.6l5.4 3-5.4 3z" fill="currentColor" stroke="none"/></svg>
-      YouTube
-    </a>
-  </div>
-  <div class="scroll-cue"><div class="bar"></div><span>SCROLL</span></div>
 </section>
 
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 5, 600 30 T 1200 30"/></svg></div>
-
-<section id="portfolio" class="reveal">
-  <div class="label-row">
-    <span class="num mono">01</span>
-    <h2>핵심 가치</h2>
-    <span class="rule"></span>
-  </div>
-  <div class="value-intro">
-    <h3>차량을 이해하는 디테일링</h3>
-    <p>카페인 디테일링은 단순히 차량을 깨끗하게 만드는 데서 멈추지 않습니다. 차량의 구조와 도장면의 특성을 정확히 이해하고, 차량 상태에 맞는 안전한 작업을 진행합니다.</p>
-  </div>
-
-  <div class="value-grid">
-    <div class="value-card accent-top">
-      <h4>정확한 진단</h4>
-      <p>모든 차량을 같은 방식으로 작업하지 않습니다. 오염의 종류와 도장 상태, 차량의 특성을 먼저 확인한 뒤 필요한 공정만 정확하게 적용합니다.</p>
+<!-- ============ 내 차 견적 ============ -->
+<section id="quote" class="v2-quote">
+  <div class="search-widget" id="carWidgetInline">
+    <div class="sw-head">
+      <span class="sw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span>
+      <p class="sw-label">내 차량 견적 바로 확인하기</p>
     </div>
-    <div class="value-card accent-top">
-      <h4>안전한 시공</h4>
-      <p>강한 약품과 과도한 작업보다 차량에 부담을 줄이는 방법을 우선합니다. 도장면과 내장재의 손상을 최소화하면서 오래 유지되는 결과를 추구합니다.</p>
+    <p class="sw-sub">차량 모델을 입력하면 서비스별 예상 가격을 바로 보여드려요</p>
+    <div class="search-box">
+      <input type="text" id="carSearchInput" aria-label="차량 모델 검색" placeholder="차량 모델을 입력하세요 (예: 아반떼, 쏘렌토)" autocomplete="off">
+      <div class="suggest-list" id="suggestList"></div>
     </div>
-    <div class="value-card accent-top">
-      <h4>책임 있는 결과</h4>
-      <p>눈앞의 광택만을 위한 작업이 아닌, 차량의 가치를 지키는 케어를 제공합니다. 작업 전 충분히 설명하고, 확인되지 않은 효과를 과장하지 않으며, 필요한 작업만 정직하게 제안합니다.</p>
+    <div class="result-card" id="resultCard">
+      <div class="result-head">
+        <span class="rname" id="rName"></span>
+        <span class="rtag" id="rTag"></span>
+      </div>
+      <div class="result-rows">
+        <div class="result-row"><span class="rk">기본세차</span><span class="rv" id="rWash"></span></div>
+        <div class="result-row"><span class="rk">디테일링</span><span class="rv" id="rDetail"></span></div>
+        <div class="result-row"><span class="rk">광택 (2스탭)</span><span class="rv" id="rPolish2"></span></div>
+        <div class="result-row"><span class="rk">광택 (3스탭)</span><span class="rv" id="rPolish3"></span></div>
+        <div class="result-row"><span class="rk">유리막코팅</span><span class="rv" id="rGlass"></span></div>
+        <div class="result-row"><span class="rk">프리미엄 (2스탭)<small>광택 2스탭 + 디테일링</small></span><span class="rv" id="rPremium2"></span></div>
+        <div class="result-row"><span class="rk">프리미엄 (3스탭)<small>광택 3스탭 + 디테일링</small></span><span class="rv" id="rPremium3"></span></div>
+        <div class="result-row"><span class="rk">크리스탈실드 (2스탭)<small>광택 2스탭 + 유리막코팅</small></span><span class="rv" id="rCrystal2"></span></div>
+        <div class="result-row"><span class="rk">크리스탈실드 (3스탭)<small>광택 3스탭 + 유리막코팅</small></span><span class="rv" id="rCrystal3"></span></div>
+        <div class="result-row"><span class="rk">얼티메이트 (2스탭)<small>광택 2스탭 + 디테일링 + 유리막코팅</small></span><span class="rv" id="rUltimate2"></span></div>
+        <div class="result-row"><span class="rk">얼티메이트 (3스탭)<small>광택 3스탭 + 디테일링 + 유리막코팅</small></span><span class="rv" id="rUltimate3"></span></div>
+      </div>
+      <div class="result-alert"><span class="ai">⚠️</span><span>오염도, 손상 부위, 반려동물 동반 등 <b>차량 상태에 따라 추가 비용</b>이 발생할 수 있어요.</span></div>
+      <p class="result-note">차량 상태와 옵션에 따라 실제 견적은 달라질 수 있습니다. 정확한 금액은 전화 상담으로 확인해주세요.</p>
+      <div class="modal-cta-row">
+        <a class="btn primary" href="tel:050714531377">전화 상담하기</a>
+        <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버 예약</a>
+      </div>
+    </div>
+    <div class="no-result" id="noResult">
+      등록된 차량 목록에서 찾을 수 없어요. 매장으로 문의해주시면 정확한 구분과 견적을 바로 안내해드려요.
     </div>
   </div>
-
-  <p class="value-closing">정비의 이해, 도장의 경험, 디테일링의 섬세함.<br><b>카페인 디테일링은 차량을 제대로 아는 사람이 직접 관리합니다.</b></p>
-
-  <p class="mono" style="font-size:12px;color:var(--red-deep);letter-spacing:0.15em;margin:44px 0 16px;">WORK GALLERY</p>
-  <div class="gallery-tabs" id="galleryTabs">
-    <button class="gallery-tab active" data-filter="all">전체</button>
-    <button class="gallery-tab" data-filter="wash">기본세차</button>
-    <button class="gallery-tab" data-filter="detailing">디테일링</button>
-    <button class="gallery-tab" data-filter="polish">광택</button>
-    <button class="gallery-tab" data-filter="coating">유리막코팅</button>
-  </div>
-  <div class="gallery-scroll" id="galleryScroll">
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224429457759" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sm5.jpg');"><span class="tag">기본세차</span><span class="cap">르노삼성 SM5</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224429431951" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_eclass2.jpg');"><span class="tag">기본세차</span><span class="cap">벤츠 E클래스</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224429417786" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_a6.jpg');"><span class="tag">기본세차</span><span class="cap">아우디 A6</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224429397753" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_palisade.jpg');"><span class="tag">디테일링</span><span class="cap">현대 팰리세이드</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224429280158" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_ev9.jpg');"><span class="tag">디테일링</span><span class="cap">기아 EV9</span></a>
-    <a class="gallery-item has-photo" data-category="polish" href="https://blog.naver.com/carfeine_/224429143932" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_grandeur.jpg');"><span class="tag">광택</span><span class="cap">현대 그랜저</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224429099950" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_a45amg.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 A45 AMG</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224427977167" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_5series.jpg');"><span class="tag">디테일링</span><span class="cap">BMW 5시리즈</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224408386091" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_pride.jpg');"><span class="tag">기본세차</span><span class="cap">기아 프라이드</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224408353149" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sportage.jpg');"><span class="tag">기본세차</span><span class="cap">기아 스포티지</span></a>
-    <a class="gallery-item has-photo" data-category="detailing coating" href="https://blog.naver.com/carfeine_/224408304297" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_seltos.jpg');"><span class="tag">디테일링·유리막코팅</span><span class="cap">기아 셀토스</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224408152282" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_santafe.jpg');"><span class="tag">기본세차</span><span class="cap">현대 싼타페</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224408144234" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_volvo.jpg');"><span class="tag">특수클리닝</span><span class="cap">볼보 V60</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405815963" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_venue.jpg');"><span class="tag">기본세차</span><span class="cap">현대 베뉴</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405801662" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_ray.jpg');"><span class="tag">기본세차</span><span class="cap">기아 레이</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224405099256" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sclass.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 S클래스</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405070288" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_gv80.jpg');"><span class="tag">기본세차</span><span class="cap">제네시스 GV80</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405046952" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_ev4.jpg');"><span class="tag">기본세차</span><span class="cap">기아 EV4</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224405036960" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_cclass_detailing.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 C클래스</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224396133230" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_modely.jpg');"><span class="tag">디테일링</span><span class="cap">테슬라 모델Y · PPF 관리</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224396115446" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_casper.jpg');"><span class="tag">기본세차</span><span class="cap">현대 캐스퍼</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224396100027" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sorento.jpg');"><span class="tag">기본세차</span><span class="cap">기아 쏘렌토</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224396080172" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sonata.jpg');"><span class="tag">기본세차</span><span class="cap">현대 쏘나타</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224395942416" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_3series.jpg');"><span class="tag">기본세차</span><span class="cap">BMW 3시리즈</span></a>
-    <a class="gallery-item has-photo" data-category="polish" href="https://blog.naver.com/carfeine_/224395671445" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_cclass.jpg');"><span class="tag">광택</span><span class="cap">벤츠 C클래스</span></a>
-    <a class="gallery-item has-photo" data-category="polish coating" href="https://blog.naver.com/carfeine_/224393389590" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_k7.jpg');"><span class="tag">광택·유리막코팅</span><span class="cap">기아 K7</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224393338359" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_eclass.jpg');"><span class="tag">기본세차</span><span class="cap">벤츠 E클래스</span></a>
-    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224393248374" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_morning.jpg');"><span class="tag">기본세차</span><span class="cap">기아 모닝</span></a>
-    <a class="gallery-item has-photo" data-category="polish coating" href="https://blog.naver.com/carfeine_/224393179899" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_wrangler.jpg');"><span class="tag">광택·유리막코팅</span><span class="cap">지프 랭글러</span></a>
-    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224393083927" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_g580.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 G580</span></a>
-  </div>
-  <p class="gallery-hint">사진을 누르면 블로그에서 작업 전 모습까지 확인하실 수 있어요.</p>
 </section>
 
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 55, 600 30 T 1200 30"/></svg></div>
-
-<section id="services" class="reveal">
-  <div class="label-row">
-    <span class="num mono">02</span>
+<!-- ============ 서비스 & 가격 ============ -->
+<section id="services">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">SERVICE &amp; PRICE</p>
     <h2>서비스 &amp; 가격안내</h2>
-    <span class="rule"></span>
+    <p class="sec-desc">차종별 기준 가격입니다. 아래 탭에서 서비스를 고르면 차급별 금액을 확인하실 수 있어요.</p>
   </div>
 
   <div class="pkg-cards-grid">
@@ -1224,68 +1355,15 @@
     표시된 금액은 차종별 기준 가격이며, 오염도와 도장 상태에 따라 추가 비용이 발생할 수 있습니다.
   </div>
 
-  <div class="search-widget" id="carWidgetInline">
-    <div class="sw-head">
-      <span class="sw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span>
-      <p class="sw-label">내 차량 견적 바로 확인하기</p>
-    </div>
-    <p class="sw-sub">차량 모델을 입력하면 서비스별 예상 가격을 바로 보여드려요</p>
-    <div class="search-box">
-      <input type="text" id="carSearchInput" aria-label="차량 모델 검색" placeholder="차량 모델을 입력하세요 (예: 아반떼, 쏘렌토)" autocomplete="off">
-      <div class="suggest-list" id="suggestList"></div>
-    </div>
-    <div class="result-card" id="resultCard">
-      <div class="result-head">
-        <span class="rname" id="rName"></span>
-        <span class="rtag" id="rTag"></span>
-      </div>
-      <div class="result-rows">
-        <div class="result-row"><span class="rk">기본세차</span><span class="rv" id="rWash"></span></div>
-        <div class="result-row"><span class="rk">디테일링</span><span class="rv" id="rDetail"></span></div>
-        <div class="result-row"><span class="rk">광택 (2스탭)</span><span class="rv" id="rPolish2"></span></div>
-        <div class="result-row"><span class="rk">광택 (3스탭)</span><span class="rv" id="rPolish3"></span></div>
-        <div class="result-row"><span class="rk">유리막코팅</span><span class="rv" id="rGlass"></span></div>
-        <div class="result-row"><span class="rk">프리미엄 (2스탭)<small>광택 2스탭 + 디테일링</small></span><span class="rv" id="rPremium2"></span></div>
-        <div class="result-row"><span class="rk">프리미엄 (3스탭)<small>광택 3스탭 + 디테일링</small></span><span class="rv" id="rPremium3"></span></div>
-        <div class="result-row"><span class="rk">크리스탈실드 (2스탭)<small>광택 2스탭 + 유리막코팅</small></span><span class="rv" id="rCrystal2"></span></div>
-        <div class="result-row"><span class="rk">크리스탈실드 (3스탭)<small>광택 3스탭 + 유리막코팅</small></span><span class="rv" id="rCrystal3"></span></div>
-        <div class="result-row"><span class="rk">얼티메이트 (2스탭)<small>광택 2스탭 + 디테일링 + 유리막코팅</small></span><span class="rv" id="rUltimate2"></span></div>
-        <div class="result-row"><span class="rk">얼티메이트 (3스탭)<small>광택 3스탭 + 디테일링 + 유리막코팅</small></span><span class="rv" id="rUltimate3"></span></div>
-      </div>
-      <div class="result-alert"><span class="ai">⚠️</span><span>오염도, 손상 부위, 반려동물 동반 등 <b>차량 상태에 따라 추가 비용</b>이 발생할 수 있어요.</span></div>
-      <p class="result-note">차량 상태와 옵션에 따라 실제 견적은 달라질 수 있습니다. 정확한 금액은 전화 상담으로 확인해주세요.</p>
-    </div>
-    <div class="no-result" id="noResult">
-      등록된 차량 목록에서 찾을 수 없어요. 매장으로 문의해주시면 정확한 구분과 견적을 바로 안내해드려요.
-    </div>
-  </div>
-
   <div class="price-tabs" id="priceTabs">
-    <button class="price-tab tab-priority active" data-tab="acc-notes">유의사항</button>
-    <button class="price-tab" data-tab="acc-wash">기본세차</button>
+    <button class="price-tab active" data-tab="acc-wash">기본세차</button>
     <button class="price-tab" data-tab="acc-detail">디테일링</button>
     <button class="price-tab" data-tab="acc-polish">광택 &amp; 코팅</button>
     <button class="price-tab" data-tab="acc-options">추가옵션</button>
   </div>
 
   <div class="price-panels">
-  <div class="price-panel active" id="acc-notes">
-    <div class="notice-banner">
-      <div class="panel-head">
-        <h4>필독 유의사항</h4>
-      </div>
-      <ul class="price-notes">
-        <li>예약 차량 우선으로 작업이 진행됩니다.</li>
-        <li>차량 크기는 제조사 제원 기준으로 분류됩니다.</li>
-        <li>오염도 및 작업 난이도에 따라 추가 비용이 발생할 수 있습니다.</li>
-        <li>모든 작업은 차량 상태에 따라 결과가 달라질 수 있습니다.</li>
-        <li>차량 내 귀중품은 사전에 별도 보관해 주시기 바랍니다.</li>
-        <li>작업 완료 후 차량 인수 시 차량 상태를 확인해 주시기 바랍니다.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="price-panel" id="acc-wash">
+  <div class="price-panel active" id="acc-wash">
 <div class="panel-head"><h4>기본세차</h4></div>
 <div class="chip-row"><span class="chip">⏱ 소요시간 약 1~2시간</span><span class="chip promo">🎉 리뷰 작성 시 5,000원 할인</span></div>
       <details class="process-toggle">
@@ -1448,6 +1526,20 @@
 
   </div>
 
+  <details class="process-toggle notes-toggle">
+    <summary>필독 유의사항 보기</summary>
+    <div class="notice-banner">
+      <ul class="price-notes">
+        <li>예약 차량 우선으로 작업이 진행됩니다.</li>
+        <li>차량 크기는 제조사 제원 기준으로 분류됩니다.</li>
+        <li>오염도 및 작업 난이도에 따라 추가 비용이 발생할 수 있습니다.</li>
+        <li>모든 작업은 차량 상태에 따라 결과가 달라질 수 있습니다.</li>
+        <li>차량 내 귀중품은 사전에 별도 보관해 주시기 바랍니다.</li>
+        <li>작업 완료 후 차량 인수 시 차량 상태를 확인해 주시기 바랍니다.</li>
+      </ul>
+    </div>
+  </details>
+
   <div class="price-guarantee-note">
     표기 금액은 일반적인 차량 상태를 기준으로 한 <b>정찰 가격</b>입니다. 심한 도장 손상, 재도장 부위, 특수 오염 또는 추가 작업이 필요한 경우 작업 전 충분한 설명과 상담을 거쳐 최종 금액을 안내드립니다. <b>고객 동의 없이 추가 비용이 발생하지 않습니다.</b>
   </div>
@@ -1472,17 +1564,62 @@
 
 </section>
 
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 55, 600 30 T 1200 30"/></svg></div>
-
-<section id="membership" class="reveal">
-  <div class="label-row">
-    <span class="num mono">03</span>
-    <h2>정액제 안내</h2>
-    <span class="rule"></span>
+<!-- ============ 작업 갤러리 ============ -->
+<section id="gallery">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">WORK GALLERY</p>
+    <h2>작업 갤러리</h2>
+    <p class="sec-desc">카페인에서 직접 작업한 차량들입니다. 사진을 누르면 블로그에서 작업 전 모습까지 확인하실 수 있어요.</p>
   </div>
-  <p style="color:var(--steel);font-size:15px;line-height:1.85;margin-bottom:36px;max-width:640px;">
-    한 번 충전으로 모든 서비스에 자유롭게 사용하는 선불 정액권입니다. 충전 금액에 보너스가 더해져 더 알뜰하게 이용하실 수 있어요.
-  </p>
+  <div class="gallery-tabs" id="galleryTabs">
+    <button class="gallery-tab active" data-filter="all">전체</button>
+    <button class="gallery-tab" data-filter="wash">기본세차</button>
+    <button class="gallery-tab" data-filter="detailing">디테일링</button>
+    <button class="gallery-tab" data-filter="polish">광택</button>
+    <button class="gallery-tab" data-filter="coating">유리막코팅</button>
+  </div>
+  <div class="gallery-scroll" id="galleryScroll">
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224429457759" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sm5.jpg');"><span class="tag">기본세차</span><span class="cap">르노삼성 SM5</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224429431951" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_eclass2.jpg');"><span class="tag">기본세차</span><span class="cap">벤츠 E클래스</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224429417786" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_a6.jpg');"><span class="tag">기본세차</span><span class="cap">아우디 A6</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224429397753" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_palisade.jpg');"><span class="tag">디테일링</span><span class="cap">현대 팰리세이드</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224429280158" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_ev9.jpg');"><span class="tag">디테일링</span><span class="cap">기아 EV9</span></a>
+    <a class="gallery-item has-photo" data-category="polish" href="https://blog.naver.com/carfeine_/224429143932" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_grandeur.jpg');"><span class="tag">광택</span><span class="cap">현대 그랜저</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224429099950" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_a45amg.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 A45 AMG</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224427977167" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_5series.jpg');"><span class="tag">디테일링</span><span class="cap">BMW 5시리즈</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224408386091" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_pride.jpg');"><span class="tag">기본세차</span><span class="cap">기아 프라이드</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224408353149" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sportage.jpg');"><span class="tag">기본세차</span><span class="cap">기아 스포티지</span></a>
+    <a class="gallery-item has-photo" data-category="detailing coating" href="https://blog.naver.com/carfeine_/224408304297" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_seltos.jpg');"><span class="tag">디테일링·유리막코팅</span><span class="cap">기아 셀토스</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224408152282" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_santafe.jpg');"><span class="tag">기본세차</span><span class="cap">현대 싼타페</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224408144234" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_volvo.jpg');"><span class="tag">특수클리닝</span><span class="cap">볼보 V60</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405815963" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_venue.jpg');"><span class="tag">기본세차</span><span class="cap">현대 베뉴</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405801662" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_ray.jpg');"><span class="tag">기본세차</span><span class="cap">기아 레이</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224405099256" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sclass.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 S클래스</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405070288" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_gv80.jpg');"><span class="tag">기본세차</span><span class="cap">제네시스 GV80</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224405046952" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_ev4.jpg');"><span class="tag">기본세차</span><span class="cap">기아 EV4</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224405036960" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_cclass_detailing.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 C클래스</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224396133230" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_modely.jpg');"><span class="tag">디테일링</span><span class="cap">테슬라 모델Y · PPF 관리</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224396115446" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_casper.jpg');"><span class="tag">기본세차</span><span class="cap">현대 캐스퍼</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224396100027" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sorento.jpg');"><span class="tag">기본세차</span><span class="cap">기아 쏘렌토</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224396080172" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_sonata.jpg');"><span class="tag">기본세차</span><span class="cap">현대 쏘나타</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224395942416" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_3series.jpg');"><span class="tag">기본세차</span><span class="cap">BMW 3시리즈</span></a>
+    <a class="gallery-item has-photo" data-category="polish" href="https://blog.naver.com/carfeine_/224395671445" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_cclass.jpg');"><span class="tag">광택</span><span class="cap">벤츠 C클래스</span></a>
+    <a class="gallery-item has-photo" data-category="polish coating" href="https://blog.naver.com/carfeine_/224393389590" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_k7.jpg');"><span class="tag">광택·유리막코팅</span><span class="cap">기아 K7</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224393338359" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_eclass.jpg');"><span class="tag">기본세차</span><span class="cap">벤츠 E클래스</span></a>
+    <a class="gallery-item has-photo" data-category="wash" href="https://blog.naver.com/carfeine_/224393248374" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_morning.jpg');"><span class="tag">기본세차</span><span class="cap">기아 모닝</span></a>
+    <a class="gallery-item has-photo" data-category="polish coating" href="https://blog.naver.com/carfeine_/224393179899" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_wrangler.jpg');"><span class="tag">광택·유리막코팅</span><span class="cap">지프 랭글러</span></a>
+    <a class="gallery-item has-photo" data-category="detailing" href="https://blog.naver.com/carfeine_/224393083927" target="_blank" rel="noopener" style="background-image:url('/assets/gallery_g580.jpg');"><span class="tag">디테일링</span><span class="cap">벤츠 G580</span></a>
+  </div>
+  <button class="gallery-more" id="galleryMore" type="button">작업 사례 더 보기</button>
+</section>
+
+<!-- ============ 정액제 ============ -->
+<section id="membership">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">MEMBERSHIP</p>
+    <h2>정액제 안내</h2>
+    <p class="sec-desc">한 번 충전으로 모든 서비스에 자유롭게 사용하는 선불 정액권입니다. 충전 금액에 보너스가 더해져 더 알뜰하게 이용하실 수 있어요.</p>
+  </div>
   <div class="mem-cards-grid">
     <div class="pkg-card">
       <h3>30만원권</h3>
@@ -1515,13 +1652,39 @@
   </div>
 </section>
 
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 5, 600 30 T 1200 30"/></svg></div>
+<!-- ============ 핵심 가치 / 회사소개 ============ -->
+<section id="about">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">WHY CAR FEINE</p>
+    <h2>차량을 이해하는 디테일링</h2>
+    <p class="sec-desc">카페인 디테일링은 단순히 차량을 깨끗하게 만드는 데서 멈추지 않습니다. 차량의 구조와 도장면의 특성을 정확히 이해하고, 차량 상태에 맞는 안전한 작업을 진행합니다.</p>
+  </div>
+  <div class="value-grid">
+    <div class="value-card accent-top">
+      <h4>정확한 진단</h4>
+      <p>모든 차량을 같은 방식으로 작업하지 않습니다. 오염의 종류와 도장 상태, 차량의 특성을 먼저 확인한 뒤 필요한 공정만 정확하게 적용합니다.</p>
+    </div>
+    <div class="value-card accent-top">
+      <h4>안전한 시공</h4>
+      <p>강한 약품과 과도한 작업보다 차량에 부담을 줄이는 방법을 우선합니다. 도장면과 내장재의 손상을 최소화하면서 오래 유지되는 결과를 추구합니다.</p>
+    </div>
+    <div class="value-card accent-top">
+      <h4>책임 있는 결과</h4>
+      <p>눈앞의 광택만을 위한 작업이 아닌, 차량의 가치를 지키는 케어를 제공합니다. 작업 전 충분히 설명하고, 확인되지 않은 효과를 과장하지 않으며, 필요한 작업만 정직하게 제안합니다.</p>
+    </div>
+  </div>
+  <p class="value-closing">정비의 이해, 도장의 경험, 디테일링의 섬세함.<br><b>카페인 디테일링은 차량을 제대로 아는 사람이 직접 관리합니다.</b></p>
+  <div class="about-note">
+    <p class="lede">차량 상태를 먼저 진단하고, 그에 맞는 공정으로 관리합니다.</p>
+    <p><strong>Car Feine</strong>는 세차·광택·유리막코팅·디테일링을 전문으로 하는 카 케어 브랜드입니다. 당장의 광택이 아니라, 시간이 지나도 유지되는 결과를 목표로 합니다. 차량 상태에 필요한 작업만 정직하게 안내하고, 시공 이후의 유지관리까지 고려합니다.</p>
+  </div>
+</section>
 
-<section id="car-guide" class="reveal">
-  <div class="label-row">
-    <span class="num mono">04</span>
+<!-- ============ 차량 크기 & 도장 두께 ============ -->
+<section id="car-guide">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">GUIDE</p>
     <h2>차량 크기 &amp; 도장 두께 기준표</h2>
-    <span class="rule"></span>
   </div>
   <div class="price-notice">상기 기준은 제조사 제원 기준 및 업계 평균 참고자료이며, 차량 옵션·연식·생산라인에 따라 달라질 수 있습니다.</div>
 
@@ -1676,13 +1839,11 @@
   </div>
 </section>
 
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 5, 600 30 T 1200 30"/></svg></div>
-
-<section id="faq" class="reveal">
-  <div class="label-row">
-    <span class="num mono">05</span>
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">FAQ</p>
     <h2>자주 묻는 질문</h2>
-    <span class="rule"></span>
   </div>
   <div class="faq-grid">
   <details class="faq-item">
@@ -1720,38 +1881,11 @@
   </div>
 </section>
 
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 5, 600 30 T 1200 30"/></svg></div>
-
-<section id="about" class="reveal">
-  <div class="label-row">
-    <span class="num mono">06</span>
-    <h2>회사소개</h2>
-    <span class="rule"></span>
-  </div>
-  <div class="about-grid">
-    <div>
-      <p class="lede">차량 상태를 먼저 진단하고, 그에 맞는 공정으로 관리합니다.</p>
-      <p><strong>Car Feine</strong>는 세차·광택·유리막코팅·디테일링을 전문으로 하는 카 케어 브랜드입니다. 당장의 광택이 아니라, 시간이 지나도 유지되는 결과를 목표로 합니다.</p>
-      <p class="fine">차량 상태에 필요한 작업만 정직하게 안내하고, 시공 이후의 유지관리까지 고려합니다.</p>
-    </div>
-    <div class="roadmap accent-top">
-      <h3 class="mono">// WHY CAR FEINE</h3>
-      <ul>
-        <li><span class="mono">01</span><span>차량별 1:1 맞춤 진단</span></li>
-        <li><span class="mono">02</span><span>정직한 시공 안내</span></li>
-        <li><span class="mono">03</span><span>시간이 지나도 유지되는 결과</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q 300 55, 600 30 T 1200 30"/></svg></div>
-
-<section id="contact" class="reveal">
-  <div class="label-row">
-    <span class="num mono">07</span>
+<!-- ============ 문의 ============ -->
+<section id="contact">
+  <div class="sec-head">
+    <p class="sec-eyebrow mono">CONTACT</p>
     <h2>문의 &amp; 오시는길</h2>
-    <span class="rule"></span>
   </div>
   <div class="contact-wrap">
     <div class="contact-info">
@@ -1792,51 +1926,10 @@
   </div>
 </footer>
 
-<button class="car-fab" id="carFabBtn" type="button">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-  견적확인
-</button>
-
-<div class="car-modal-overlay" id="carModalOverlay">
-  <div class="car-modal-panel">
-    <button class="car-modal-close" id="carModalClose" type="button" aria-label="닫기">✕</button>
-    <h3>내 차량 견적 확인</h3>
-    <p class="modal-sub">차량 모델을 입력하면 서비스별 예상 가격을 바로 보여드려요</p>
-    <div class="search-widget" id="carWidgetModal">
-      <div class="search-box">
-        <input type="text" id="carSearchInputM" aria-label="차량 모델 검색" placeholder="차량 모델을 입력하세요 (예: 아반떼, 쏘렌토)" autocomplete="off">
-        <div class="suggest-list" id="suggestListM"></div>
-      </div>
-      <div class="result-card" id="resultCardM">
-        <div class="result-head">
-          <span class="rname" id="rNameM"></span>
-          <span class="rtag" id="rTagM"></span>
-        </div>
-        <div class="result-rows">
-          <div class="result-row"><span class="rk">기본세차</span><span class="rv" id="rWashM"></span></div>
-          <div class="result-row"><span class="rk">디테일링</span><span class="rv" id="rDetailM"></span></div>
-          <div class="result-row"><span class="rk">광택 (2스탭)</span><span class="rv" id="rPolish2M"></span></div>
-          <div class="result-row"><span class="rk">광택 (3스탭)</span><span class="rv" id="rPolish3M"></span></div>
-          <div class="result-row"><span class="rk">유리막코팅</span><span class="rv" id="rGlassM"></span></div>
-          <div class="result-row"><span class="rk">프리미엄 (2스탭)<small>광택 2스탭 + 디테일링</small></span><span class="rv" id="rPremium2M"></span></div>
-          <div class="result-row"><span class="rk">프리미엄 (3스탭)<small>광택 3스탭 + 디테일링</small></span><span class="rv" id="rPremium3M"></span></div>
-          <div class="result-row"><span class="rk">크리스탈실드 (2스탭)<small>광택 2스탭 + 유리막코팅</small></span><span class="rv" id="rCrystal2M"></span></div>
-          <div class="result-row"><span class="rk">크리스탈실드 (3스탭)<small>광택 3스탭 + 유리막코팅</small></span><span class="rv" id="rCrystal3M"></span></div>
-          <div class="result-row"><span class="rk">얼티메이트 (2스탭)<small>광택 2스탭 + 디테일링 + 유리막코팅</small></span><span class="rv" id="rUltimate2M"></span></div>
-          <div class="result-row"><span class="rk">얼티메이트 (3스탭)<small>광택 3스탭 + 디테일링 + 유리막코팅</small></span><span class="rv" id="rUltimate3M"></span></div>
-        </div>
-        <div class="result-alert"><span class="ai">⚠️</span><span>오염도, 손상 부위, 반려동물 동반 등 <b>차량 상태에 따라 추가 비용</b>이 발생할 수 있어요.</span></div>
-        <p class="result-note">차량 상태와 옵션에 따라 실제 견적은 달라질 수 있습니다. 정확한 금액은 전화 상담으로 확인해주세요.</p>
-        <div class="modal-cta-row">
-          <a class="btn primary" href="tel:050714531377">전화 상담하기</a>
-          <a class="btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버예약</a>
-        </div>
-      </div>
-      <div class="no-result" id="noResultM">
-        등록된 차량 목록에서 찾을 수 없어요. 매장으로 문의해주시면 정확한 구분과 견적을 바로 안내해드려요.
-      </div>
-    </div>
-  </div>
+<div class="dock" id="dock">
+  <a class="dock-btn call" href="tel:050714531377">전화 상담</a>
+  <a class="dock-btn naver" href="https://pcmap.place.naver.com/place/2043667554/ticket" target="_blank" rel="noopener">네이버 예약</a>
+  <button class="dock-btn quote" id="dockQuote" type="button">견적확인</button>
 </div>
 
 </div>
@@ -1880,27 +1973,47 @@
     });
   })();
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-  }, { threshold: 0, rootMargin: '0px 0px -80px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  const galleryTabs = document.getElementById('galleryTabs');
-  const galleryScroll = document.getElementById('galleryScroll');
-  if (galleryTabs && galleryScroll) {
-    galleryTabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.gallery-tab');
-      if (!btn) return;
-      galleryTabs.querySelectorAll('.gallery-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      galleryScroll.querySelectorAll('.gallery-item').forEach(item => {
-        const match = filter === 'all' || item.dataset.category.split(' ').includes(filter);
-        item.style.display = match ? 'flex' : 'none';
+  // ===== 작업 갤러리: 필터 + 더 보기 =====
+  (function(){
+    var tabs = document.getElementById('galleryTabs');
+    var grid = document.getElementById('galleryScroll');
+    var more = document.getElementById('galleryMore');
+    if (!tabs || !grid) return;
+    var LIMIT = 8;
+    var filter = 'all';
+    var expanded = false;
+    var items = [].slice.call(grid.querySelectorAll('.gallery-item'));
+    function apply(){
+      var shown = 0, matched = 0;
+      items.forEach(function(it){
+        var ok = filter === 'all' || it.dataset.category.split(' ').indexOf(filter) > -1;
+        if (!ok) { it.classList.add('gone'); return; }
+        matched++;
+        if (!expanded && shown >= LIMIT) { it.classList.add('gone'); return; }
+        it.classList.remove('gone');
+        shown++;
       });
-      galleryScroll.scrollTo({ left: 0, behavior: 'smooth' });
+      if (more) {
+        more.style.display = matched > LIMIT ? '' : 'none';
+        more.textContent = expanded ? '접기' : '작업 사례 더 보기 (' + (matched - LIMIT) + ')';
+      }
+    }
+    tabs.addEventListener('click', function(e){
+      var btn = e.target.closest('.gallery-tab');
+      if (!btn) return;
+      tabs.querySelectorAll('.gallery-tab').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      filter = btn.dataset.filter;
+      expanded = false;
+      apply();
     });
-  }
+    if (more) more.addEventListener('click', function(){
+      expanded = !expanded;
+      apply();
+      if (!expanded) tabs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    apply();
+  })();
 
   // ===== 차량 크기 기준표 - 견적 검색 (Supabase 연동) =====
   const SUPABASE_URL = 'https://gzquszbwjiukkubzcjgx.supabase.co';
@@ -2061,78 +2174,19 @@
       rGlass:'rGlass', rPremium2:'rPremium2', rPremium3:'rPremium3', rCrystal2:'rCrystal2', rCrystal3:'rCrystal3',
       rUltimate2:'rUltimate2', rUltimate3:'rUltimate3',
     });
-    initCarSearch({
-      container:'carWidgetModal', input:'carSearchInputM', suggest:'suggestListM',
-      result:'resultCardM', noResult:'noResultM',
-      rName:'rNameM', rTag:'rTagM', rWash:'rWashM', rDetail:'rDetailM', rPolish2:'rPolish2M', rPolish3:'rPolish3M',
-      rGlass:'rGlassM', rPremium2:'rPremium2M', rPremium3:'rPremium3M', rCrystal2:'rCrystal2M', rCrystal3:'rCrystal3M',
-      rUltimate2:'rUltimate2M', rUltimate3:'rUltimate3M',
-    });
-
-    // 플로팅 위젯 버튼 -> 모달 열기/닫기 (부드러운 페이드인/아웃)
-    const fabBtn = document.getElementById('carFabBtn');
-    const modalOverlay = document.getElementById('carModalOverlay');
-    const modalClose = document.getElementById('carModalClose');
-    const modalPanelEl = document.querySelector('.car-modal-panel');
-    const isMobileViewport = () => window.matchMedia('(max-width:820px)').matches;
-
-    // 모바일 키보드가 열리고 닫힐 때 모달 높이를 실제 보이는 화면(visualViewport)에 맞춰 재조정
-    if (window.visualViewport && modalPanelEl) {
-      const vv = window.visualViewport;
-      function fitModalToViewport(){
-        if (!modalOverlay.classList.contains('open')) return;
-        const availableHeight = vv.height - 24;
-        modalPanelEl.style.maxHeight = availableHeight + 'px';
-      }
-      vv.addEventListener('resize', fitModalToViewport);
-      vv.addEventListener('scroll', fitModalToViewport);
-    }
-
-    if (fabBtn && modalOverlay) {
-      function openModal(){
-        modalOverlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            modalOverlay.classList.add('show');
-          });
-        });
-        // 모바일에서는 자동 포커스를 걸지 않아, 키보드가 바로 튀어나와 모달을 가리는 것을 방지
-        if (!isMobileViewport()) {
-          setTimeout(() => {
-            const inputM = document.getElementById('carSearchInputM');
-            if (inputM) inputM.focus();
-          }, 300);
-        }
-      }
-      function closeModal(){
-        modalOverlay.classList.remove('show');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          modalOverlay.classList.remove('open');
-          if (modalPanelEl) modalPanelEl.style.maxHeight = '';
-        }, 260);
-      }
-      fabBtn.addEventListener('click', openModal);
-      modalClose.addEventListener('click', closeModal);
-      modalOverlay.addEventListener('click', (e) => {
-        if(e.target === modalOverlay) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal();
-      });
-
-      // 입력창에 포커스가 잡히면(키보드가 열리면) 입력창이 항상 보이도록 스크롤 보정
-      const inputMEl = document.getElementById('carSearchInputM');
-      if (inputMEl) {
-        inputMEl.addEventListener('focus', () => {
-          setTimeout(() => {
-            inputMEl.scrollIntoView({ block: 'center', behavior: 'smooth' });
-          }, 300);
-        });
-      }
-    }
   }
+
+  // 하단 바/버튼의 "견적확인" -> 견적 위젯으로 이동
+  (function(){
+    var btn = document.getElementById('dockQuote');
+    var widget = document.getElementById('carWidgetInline');
+    var input = document.getElementById('carSearchInput');
+    if (!btn || !widget) return;
+    btn.addEventListener('click', function(){
+      widget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (window.innerWidth > 820 && input) setTimeout(function(){ input.focus(); }, 500);
+    });
+  })();
 
   // 탭 전환 (여러 탭 그룹에서 재사용, 그룹별로 독립 동작)
   function initTabGroup(tabsId){
@@ -2153,21 +2207,6 @@
 
   const activatePriceTab = initTabGroup('priceTabs');
   initTabGroup('carGuideTabs');
-
-  // 정찰가격 안내 배너는 "유의사항" 탭엔 이미 비슷한 안내가 있어서, 그 탭에서만 숨김
-  (function(){
-    const priceTabsEl = document.getElementById('priceTabs');
-    const guaranteeNote = document.querySelector('.price-guarantee-note');
-    if (!priceTabsEl || !guaranteeNote) return;
-    function syncGuaranteeNote(tabId){
-      guaranteeNote.style.display = (tabId === 'acc-notes') ? 'none' : '';
-    }
-    priceTabsEl.addEventListener('click', (e) => {
-      const btn = e.target.closest('.price-tab');
-      if (btn) syncGuaranteeNote(btn.dataset.tab);
-    });
-    syncGuaranteeNote('acc-notes'); // 유의사항이 기본 활성 탭이므로 초기 상태도 맞춰줌
-  })();
 
   // 서비스 카드 "가격표 보기" -> 해당 탭 열고 스크롤
   document.querySelectorAll('.js-acc-link').forEach(link => {
